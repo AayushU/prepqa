@@ -53,6 +53,6 @@ USE_I18N = True
 LANGUAGE_CODE = 'en'
 
 DJANGO_VERSION = 1.1
-OSQA_DEFAULT_SKIN = 'OSQA_Simplton'
+OSQA_DEFAULT_SKIN = 'default'
 
 DISABLED_MODULES = ['books', 'recaptcha', 'project_badges']

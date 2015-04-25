@@ -1582,3 +1582,8 @@ TemplateSyntaxError: Invalid filter: 'slugify_tag'
 /opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:42,158 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
 /opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:42,389 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
 /opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:42,400 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 19:29:33,647 MSG: __init__.py:find_media_source:147 could not find media for media/style/style.css
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 19:29:34,257 MSG: __init__.py:find_media_source:147 could not find media for media/style/style.css
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 19:29:34,286 MSG: __init__.py:find_media_source:147 could not find media for media/style/style.css
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 19:29:35,356 MSG: __init__.py:find_media_source:147 could not find media for media/style/style.css
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 19:29:35,400 MSG: __init__.py:find_media_source:147 could not find media for media/style/style.css
