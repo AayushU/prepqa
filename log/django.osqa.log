@@ -1,0 +1,1584 @@
+/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py TIME: 2015-04-25 13:46:30,286 MSG: base.py:handle_uncaught_exception:213 Internal Server Error: /osqa/account/local/signin/
+Traceback (most recent call last):
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/opt/bitnami/apps/osqa/forum/views/auth.py", line 97, in prepare_provider_signin
+    return process_provider_signin(request, provider)
+  File "/opt/bitnami/apps/osqa/forum/views/auth.py", line 111, in process_provider_signin
+    assoc_key = provider_class.process_authentication_request(request)
+  File "/opt/bitnami/apps/osqa/forum_modules/localauth/authentication.py", line 8, in process_authentication_request
+    if form_auth.is_valid():
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/forms/forms.py", line 124, in is_valid
+    return self.is_bound and not bool(self.errors)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/forms/forms.py", line 115, in _get_errors
+    self.full_clean()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/forms/forms.py", line 270, in full_clean
+    self._clean_fields()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/forms/forms.py", line 290, in _clean_fields
+    value = getattr(self, 'clean_%s' % name)()
+  File "/opt/bitnami/apps/osqa/forum_modules/localauth/forms.py", line 65, in clean_username
+    return self._clean_nonempty_field('username')
+  File "/opt/bitnami/apps/osqa/forum_modules/localauth/forms.py", line 58, in _clean_nonempty_field
+    value = self.cleaned_data[field].strip()
+AttributeError: 'NoneType' object has no attribute 'strip'
+/opt/bitnami/apps/osqa/forum/views/meta.py TIME: 2015-04-25 13:46:30,295 MSG: meta.py:error_handler:202 
+        error executing request:
+        PATH: /osqa/account/local/signin/
+        USER: <anonymous>
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		mod_wsgi.listener_host: 
+		CONTEXT_DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		SERVER_SOFTWARE: Apache
+		SCRIPT_NAME: /osqa
+		mod_wsgi.enable_sendfile: 0
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: 
+		REQUEST_METHOD: GET
+		PATH_INFO: /account/local/signin/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		LD_LIBRARY_PATH: /opt/bitnami/sqlite/lib:/opt/bitnami/python/lib:/opt/bitnami/mysql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/common/lib:/opt/bitnami/ruby/lib/ruby/gems/2.0.0/gems/passenger-4.0.57/lib:/opt/bitnami/memcached/lib:/opt/bitnami/varnish/lib:/opt/bitnami/varnish/lib/varnish:/opt/bitnami/varnish/lib/varnish/vmods:/opt/bitnami/redis/lib:/opt/bitnami/perl/lib:/opt/bitnami/perl/lib/5.16.3/x86_64-linux-thread-multi/CORE:/opt/bitnami/git/lib:/opt/bitnami/nginx/lib:/opt/bitnami/mongodb/lib:/opt/bitnami/sqlite/lib:/opt/bitnami/apps/django/lib/python2.7/site-packages:/opt/bitnami/mysql/lib:/opt/bitnami/postgresql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/python/lib:/opt/bitnami/subversion/lib:/opt/bitnami/ruby/lib:/opt/bitnami/common/lib:
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.4 Safari/600.4.10
+		HTTP_CONNECTION: keep-alive
+		SERVER_NAME: www.teststack.bitnamiapp.com
+		REMOTE_ADDR: 69.181.197.67
+		mod_wsgi.queue_start: 1429983990280932
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /opt/bitnami/apache2/htdocs/account/local/signin/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 10.230.50.199
+		DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		mod_wsgi.process_group: wsgi-osqa
+		SCRIPT_FILENAME: /opt/bitnami/apps/osqa/scripts/osqa.wsgi
+		SERVER_ADMIN: you@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7f1511e8ad30>
+		HTTP_HOST: www.teststack.bitnamiapp.com
+		CONTEXT_PREFIX: 
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /osqa/account/local/signin/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+		wsgi.version: (1, 0)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7f1511e8afb0>
+		REMOTE_PORT: 57546
+		HTTP_ACCEPT_LANGUAGE: en-us
+		REQUEST_SCHEME: http
+		mod_wsgi.version: (3, 5)
+		mod_wsgi.application_group: localhost|/osqa
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f1511e85378>
+		CSRF_COOKIE: 0EPqcUP2nP4j6EDbbrhkCv2JXv0n6gBs
+		HTTP_ACCEPT_ENCODING: gzip, deflate
+
+        COOKIES:
+        		greeting_set: True
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/views/auth.py", line 97, in prepare_provider_signin
+		    return process_provider_signin(request, provider)
+		  File "/opt/bitnami/apps/osqa/forum/views/auth.py", line 111, in process_provider_signin
+		    assoc_key = provider_class.process_authentication_request(request)
+		  File "/opt/bitnami/apps/osqa/forum_modules/localauth/authentication.py", line 8, in process_authentication_request
+		    if form_auth.is_valid():
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/forms/forms.py", line 124, in is_valid
+		    return self.is_bound and not bool(self.errors)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/forms/forms.py", line 115, in _get_errors
+		    self.full_clean()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/forms/forms.py", line 270, in full_clean
+		    self._clean_fields()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/forms/forms.py", line 290, in _clean_fields
+		    value = getattr(self, 'clean_%s' % name)()
+		  File "/opt/bitnami/apps/osqa/forum_modules/localauth/forms.py", line 65, in clean_username
+		    return self._clean_nonempty_field('username')
+		  File "/opt/bitnami/apps/osqa/forum_modules/localauth/forms.py", line 58, in _clean_nonempty_field
+		    value = self.cleaned_data[field].strip()
+		AttributeError: 'NoneType' object has no attribute 'strip'
+		
+
+        
+/opt/bitnami/apps/osqa/forum/subscriptions.py TIME: 2015-04-25 16:21:34,664 MSG: subscriptions.py:answer_posted:71 Answer posted: True
+/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py TIME: 2015-04-25 16:51:53,615 MSG: base.py:handle_uncaught_exception:213 Internal Server Error: /osqa/
+Traceback (most recent call last):
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+    return decoratable(*args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+    res = dec(res, *args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+    context_instance=RequestContext(request))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1041, in load
+    lib = get_library(taglib)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1300, in get_library
+    lib = import_library(taglib_module)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1239, in import_library
+    mod = import_module(taglib_module)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+    class QuestionItemNode(template.Node):
+  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+    template = template.loader.get_template('question_list/item.html')
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+    args.append(parser.compile_filter(value))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+TemplateSyntaxError: Invalid filter: 'slugify_tag'
+/opt/bitnami/apps/osqa/forum/views/meta.py TIME: 2015-04-25 16:51:53,632 MSG: meta.py:error_handler:202 
+        error executing request:
+        PATH: /osqa/
+        USER: testpreposqa (1)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: greeting_set=True; csrftoken=vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd; sessionid=78ddfa48c61f7558685e55e2c95eddec
+		mod_wsgi.listener_host: 
+		CONTEXT_DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		SERVER_SOFTWARE: Apache
+		SCRIPT_NAME: /osqa
+		mod_wsgi.enable_sendfile: 0
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: 
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		LD_LIBRARY_PATH: /opt/bitnami/sqlite/lib:/opt/bitnami/python/lib:/opt/bitnami/mysql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/common/lib:/opt/bitnami/ruby/lib/ruby/gems/2.0.0/gems/passenger-4.0.57/lib:/opt/bitnami/memcached/lib:/opt/bitnami/varnish/lib:/opt/bitnami/varnish/lib/varnish:/opt/bitnami/varnish/lib/varnish/vmods:/opt/bitnami/redis/lib:/opt/bitnami/perl/lib:/opt/bitnami/perl/lib/5.16.3/x86_64-linux-thread-multi/CORE:/opt/bitnami/git/lib:/opt/bitnami/nginx/lib:/opt/bitnami/mongodb/lib:/opt/bitnami/sqlite/lib:/opt/bitnami/apps/django/lib/python2.7/site-packages:/opt/bitnami/mysql/lib:/opt/bitnami/postgresql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/python/lib:/opt/bitnami/subversion/lib:/opt/bitnami/ruby/lib:/opt/bitnami/common/lib:
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36
+		HTTP_CONNECTION: keep-alive
+		SERVER_NAME: www.teststack.bitnamiapp.com
+		REMOTE_ADDR: 69.181.197.67
+		mod_wsgi.queue_start: 1429995110291950
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /opt/bitnami/apache2/htdocs/index.html
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 10.230.50.199
+		DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		mod_wsgi.process_group: wsgi-osqa
+		SCRIPT_FILENAME: /opt/bitnami/apps/osqa/scripts/osqa.wsgi
+		SERVER_ADMIN: you@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7fb94c8c4bf0>
+		HTTP_DNT: 1
+		HTTP_HOST: www.teststack.bitnamiapp.com
+		CONTEXT_PREFIX: 
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: max-age=0
+		REQUEST_URI: /osqa/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+		wsgi.version: (1, 0)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7fb94c8c4c30>
+		REMOTE_PORT: 59582
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		REQUEST_SCHEME: http
+		mod_wsgi.version: (3, 5)
+		mod_wsgi.application_group: localhost|/osqa
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7fb951c12c60>
+		CSRF_COOKIE: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		HTTP_ACCEPT_ENCODING: gzip, deflate, sdch
+
+        COOKIES:
+        		csrftoken: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		sessionid: 78ddfa48c61f7558685e55e2c95eddec
+		greeting_set: True
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+		    context_instance=RequestContext(request))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+		    t = get_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+		    nodelist = parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1041, in load
+		    lib = get_library(taglib)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1300, in get_library
+		    lib = import_library(taglib_module)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1239, in import_library
+		    mod = import_module(taglib_module)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+		    args.append(parser.compile_filter(value))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'slugify_tag'
+		
+
+        
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 16:51:53,659 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 16:51:55,777 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 16:51:55,826 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py TIME: 2015-04-25 17:07:18,095 MSG: base.py:handle_uncaught_exception:213 Internal Server Error: /osqa/questions/1/sat-math-comparing-sums
+Traceback (most recent call last):
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+    return decoratable(*args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+    res = dec(res, *args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+    context_instance=RequestContext(request))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+    args.append(parser.compile_filter(value))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+TemplateSyntaxError: Invalid filter: 'slugify_tag'
+/opt/bitnami/apps/osqa/forum/views/meta.py TIME: 2015-04-25 17:07:18,105 MSG: meta.py:error_handler:202 
+        error executing request:
+        PATH: /osqa/questions/1/sat-math-comparing-sums
+        USER: testpreposqa (1)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_REFERER: http://www.teststack.bitnamiapp.com/osqa/
+		mod_wsgi.listener_host: 
+		CONTEXT_DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		SERVER_SOFTWARE: Apache
+		SCRIPT_NAME: /osqa
+		mod_wsgi.enable_sendfile: 0
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: 
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/1/sat-math-comparing-sums
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		LD_LIBRARY_PATH: /opt/bitnami/sqlite/lib:/opt/bitnami/python/lib:/opt/bitnami/mysql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/common/lib:/opt/bitnami/ruby/lib/ruby/gems/2.0.0/gems/passenger-4.0.57/lib:/opt/bitnami/memcached/lib:/opt/bitnami/varnish/lib:/opt/bitnami/varnish/lib/varnish:/opt/bitnami/varnish/lib/varnish/vmods:/opt/bitnami/redis/lib:/opt/bitnami/perl/lib:/opt/bitnami/perl/lib/5.16.3/x86_64-linux-thread-multi/CORE:/opt/bitnami/git/lib:/opt/bitnami/nginx/lib:/opt/bitnami/mongodb/lib:/opt/bitnami/sqlite/lib:/opt/bitnami/apps/django/lib/python2.7/site-packages:/opt/bitnami/mysql/lib:/opt/bitnami/postgresql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/python/lib:/opt/bitnami/subversion/lib:/opt/bitnami/ruby/lib:/opt/bitnami/common/lib:
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36
+		HTTP_CONNECTION: keep-alive
+		HTTP_COOKIE: greeting_set=True; csrftoken=vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd; sessionid=78ddfa48c61f7558685e55e2c95eddec
+		SERVER_NAME: www.teststack.bitnamiapp.com
+		REMOTE_ADDR: 69.181.197.67
+		mod_wsgi.queue_start: 1429996036443681
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /opt/bitnami/apache2/htdocs/questions/1/sat-math-comparing-sums
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 10.230.50.199
+		DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		mod_wsgi.process_group: wsgi-osqa
+		SCRIPT_FILENAME: /opt/bitnami/apps/osqa/scripts/osqa.wsgi
+		SERVER_ADMIN: you@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7f6fd88c3bf0>
+		HTTP_DNT: 1
+		HTTP_HOST: www.teststack.bitnamiapp.com
+		CONTEXT_PREFIX: 
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: max-age=0
+		REQUEST_URI: /osqa/questions/1/sat-math-comparing-sums
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+		wsgi.version: (1, 0)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7f6fd88c3c30>
+		REMOTE_PORT: 59669
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		REQUEST_SCHEME: http
+		mod_wsgi.version: (3, 5)
+		mod_wsgi.application_group: localhost|/osqa
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f6fdc88fc60>
+		CSRF_COOKIE: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		HTTP_ACCEPT_ENCODING: gzip, deflate, sdch
+
+        COOKIES:
+        		csrftoken: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		sessionid: 78ddfa48c61f7558685e55e2c95eddec
+		greeting_set: True
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+		    context_instance=RequestContext(request))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+		    t = get_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+		    nodelist = parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 189, in do_block
+		    nodelist = parser.parse(('endblock',))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+		    args.append(parser.compile_filter(value))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'slugify_tag'
+		
+
+        
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:07:18,155 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py TIME: 2015-04-25 17:07:20,602 MSG: base.py:handle_uncaught_exception:213 Internal Server Error: /osqa/questions/1/sat-math-comparing-sums
+Traceback (most recent call last):
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+    return decoratable(*args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+    res = dec(res, *args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+    context_instance=RequestContext(request))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+    args.append(parser.compile_filter(value))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+TemplateSyntaxError: Invalid filter: 'slugify_tag'
+/opt/bitnami/apps/osqa/forum/views/meta.py TIME: 2015-04-25 17:07:20,619 MSG: meta.py:error_handler:202 
+        error executing request:
+        PATH: /osqa/questions/1/sat-math-comparing-sums
+        USER: testpreposqa (1)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_REFERER: http://www.teststack.bitnamiapp.com/osqa/questions/1/sat-math-comparing-sums
+		mod_wsgi.listener_host: 
+		CONTEXT_DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		SERVER_SOFTWARE: Apache
+		SCRIPT_NAME: /osqa
+		mod_wsgi.enable_sendfile: 0
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: 
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/1/sat-math-comparing-sums
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		LD_LIBRARY_PATH: /opt/bitnami/sqlite/lib:/opt/bitnami/python/lib:/opt/bitnami/mysql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/common/lib:/opt/bitnami/ruby/lib/ruby/gems/2.0.0/gems/passenger-4.0.57/lib:/opt/bitnami/memcached/lib:/opt/bitnami/varnish/lib:/opt/bitnami/varnish/lib/varnish:/opt/bitnami/varnish/lib/varnish/vmods:/opt/bitnami/redis/lib:/opt/bitnami/perl/lib:/opt/bitnami/perl/lib/5.16.3/x86_64-linux-thread-multi/CORE:/opt/bitnami/git/lib:/opt/bitnami/nginx/lib:/opt/bitnami/mongodb/lib:/opt/bitnami/sqlite/lib:/opt/bitnami/apps/django/lib/python2.7/site-packages:/opt/bitnami/mysql/lib:/opt/bitnami/postgresql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/python/lib:/opt/bitnami/subversion/lib:/opt/bitnami/ruby/lib:/opt/bitnami/common/lib:
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36
+		HTTP_CONNECTION: keep-alive
+		HTTP_COOKIE: greeting_set=True; csrftoken=vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd; sessionid=78ddfa48c61f7558685e55e2c95eddec; messages="ded55d08534e6e5a1a3e57efcc410190b7e7630b$[[\"__json_message\"\05420\054\"\\n                    The e-mail settings of this community are not configured yet. We strongly recommend you to\\n                    do that from the <a href=\\\"/osqa/admin/settings/email/\\\">e-mail settings page</a> as soon as possible.\\n                    \"]]"
+		SERVER_NAME: www.teststack.bitnamiapp.com
+		REMOTE_ADDR: 69.181.197.67
+		mod_wsgi.queue_start: 1429996040483765
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /opt/bitnami/apache2/htdocs/questions/1/sat-math-comparing-sums
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 10.230.50.199
+		DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		mod_wsgi.process_group: wsgi-osqa
+		SCRIPT_FILENAME: /opt/bitnami/apps/osqa/scripts/osqa.wsgi
+		SERVER_ADMIN: you@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7f6fd9e5a370>
+		HTTP_DNT: 1
+		HTTP_HOST: www.teststack.bitnamiapp.com
+		CONTEXT_PREFIX: 
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		HTTP_CACHE_CONTROL: max-age=0
+		REQUEST_URI: /osqa/questions/1/sat-math-comparing-sums
+		HTTP_ACCEPT: */*
+		wsgi.version: (1, 0)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7f6fd9e5a030>
+		REMOTE_PORT: 59670
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		REQUEST_SCHEME: http
+		mod_wsgi.version: (3, 5)
+		mod_wsgi.application_group: localhost|/osqa
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f6fd9e420a8>
+		CSRF_COOKIE: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		HTTP_ACCEPT_ENCODING: gzip, deflate, sdch
+
+        COOKIES:
+        		csrftoken: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		messages: ded55d08534e6e5a1a3e57efcc410190b7e7630b$[["__json_message",20,"\n                    The e-mail settings of this community are not configured yet. We strongly recommend you to\n                    do that from the <a href=\"/osqa/admin/settings/email/\">e-mail settings page</a> as soon as possible.\n                    "]]
+		sessionid: 78ddfa48c61f7558685e55e2c95eddec
+		greeting_set: True
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+		    context_instance=RequestContext(request))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+		    t = get_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+		    nodelist = parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 189, in do_block
+		    nodelist = parser.parse(('endblock',))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+		    args.append(parser.compile_filter(value))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'slugify_tag'
+		
+
+        
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:07:20,623 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py TIME: 2015-04-25 17:08:14,408 MSG: base.py:handle_uncaught_exception:213 Internal Server Error: /osqa/
+Traceback (most recent call last):
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+    return decoratable(*args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+    res = dec(res, *args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+    context_instance=RequestContext(request))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1041, in load
+    lib = get_library(taglib)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1300, in get_library
+    lib = import_library(taglib_module)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1239, in import_library
+    mod = import_module(taglib_module)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+    class QuestionItemNode(template.Node):
+  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+    template = template.loader.get_template('question_list/item.html')
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+    args.append(parser.compile_filter(value))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+TemplateSyntaxError: Invalid filter: 'slugify_tag'
+/opt/bitnami/apps/osqa/forum/views/meta.py TIME: 2015-04-25 17:08:14,417 MSG: meta.py:error_handler:202 
+        error executing request:
+        PATH: /osqa/
+        USER: testpreposqa (1)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_REFERER: http://www.teststack.bitnamiapp.com/osqa/questions/1/sat-math-comparing-sums
+		mod_wsgi.listener_host: 
+		CONTEXT_DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		SERVER_SOFTWARE: Apache
+		SCRIPT_NAME: /osqa
+		mod_wsgi.enable_sendfile: 0
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: 
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		LD_LIBRARY_PATH: /opt/bitnami/sqlite/lib:/opt/bitnami/python/lib:/opt/bitnami/mysql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/common/lib:/opt/bitnami/ruby/lib/ruby/gems/2.0.0/gems/passenger-4.0.57/lib:/opt/bitnami/memcached/lib:/opt/bitnami/varnish/lib:/opt/bitnami/varnish/lib/varnish:/opt/bitnami/varnish/lib/varnish/vmods:/opt/bitnami/redis/lib:/opt/bitnami/perl/lib:/opt/bitnami/perl/lib/5.16.3/x86_64-linux-thread-multi/CORE:/opt/bitnami/git/lib:/opt/bitnami/nginx/lib:/opt/bitnami/mongodb/lib:/opt/bitnami/sqlite/lib:/opt/bitnami/apps/django/lib/python2.7/site-packages:/opt/bitnami/mysql/lib:/opt/bitnami/postgresql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/python/lib:/opt/bitnami/subversion/lib:/opt/bitnami/ruby/lib:/opt/bitnami/common/lib:
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36
+		HTTP_CONNECTION: keep-alive
+		HTTP_COOKIE: greeting_set=True; csrftoken=vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd; sessionid=78ddfa48c61f7558685e55e2c95eddec; messages="ded55d08534e6e5a1a3e57efcc410190b7e7630b$[[\"__json_message\"\05420\054\"\\n                    The e-mail settings of this community are not configured yet. We strongly recommend you to\\n                    do that from the <a href=\\\"/osqa/admin/settings/email/\\\">e-mail settings page</a> as soon as possible.\\n                    \"]]"
+		SERVER_NAME: www.teststack.bitnamiapp.com
+		REMOTE_ADDR: 69.181.197.67
+		mod_wsgi.queue_start: 1429996094227198
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /opt/bitnami/apache2/htdocs/index.html
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 10.230.50.199
+		DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		mod_wsgi.process_group: wsgi-osqa
+		SCRIPT_FILENAME: /opt/bitnami/apps/osqa/scripts/osqa.wsgi
+		SERVER_ADMIN: you@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7f6fda03f5b0>
+		HTTP_DNT: 1
+		HTTP_HOST: www.teststack.bitnamiapp.com
+		CONTEXT_PREFIX: 
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /osqa/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+		wsgi.version: (1, 0)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7f6fda03f870>
+		REMOTE_PORT: 59684
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		REQUEST_SCHEME: http
+		mod_wsgi.version: (3, 5)
+		mod_wsgi.application_group: localhost|/osqa
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f6fda04b5d0>
+		CSRF_COOKIE: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		HTTP_ACCEPT_ENCODING: gzip, deflate, sdch
+
+        COOKIES:
+        		csrftoken: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		messages: ded55d08534e6e5a1a3e57efcc410190b7e7630b$[["__json_message",20,"\n                    The e-mail settings of this community are not configured yet. We strongly recommend you to\n                    do that from the <a href=\"/osqa/admin/settings/email/\">e-mail settings page</a> as soon as possible.\n                    "]]
+		sessionid: 78ddfa48c61f7558685e55e2c95eddec
+		greeting_set: True
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+		    context_instance=RequestContext(request))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+		    t = get_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+		    nodelist = parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1041, in load
+		    lib = get_library(taglib)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1300, in get_library
+		    lib = import_library(taglib_module)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1239, in import_library
+		    mod = import_module(taglib_module)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+		    args.append(parser.compile_filter(value))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'slugify_tag'
+		
+
+        
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:14,422 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:15,082 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:15,132 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py TIME: 2015-04-25 17:08:20,683 MSG: base.py:handle_uncaught_exception:213 Internal Server Error: /osqa/questions/
+Traceback (most recent call last):
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+    return decoratable(*args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+    res = dec(res, *args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+    context_instance=RequestContext(request))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1041, in load
+    lib = get_library(taglib)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1300, in get_library
+    lib = import_library(taglib_module)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1239, in import_library
+    mod = import_module(taglib_module)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+    class QuestionItemNode(template.Node):
+  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+    template = template.loader.get_template('question_list/item.html')
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+    args.append(parser.compile_filter(value))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+TemplateSyntaxError: Invalid filter: 'slugify_tag'
+/opt/bitnami/apps/osqa/forum/views/meta.py TIME: 2015-04-25 17:08:20,692 MSG: meta.py:error_handler:202 
+        error executing request:
+        PATH: /osqa/questions/
+        USER: testpreposqa (1)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_REFERER: http://www.teststack.bitnamiapp.com/osqa/
+		mod_wsgi.listener_host: 
+		CONTEXT_DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		SERVER_SOFTWARE: Apache
+		SCRIPT_NAME: /osqa
+		mod_wsgi.enable_sendfile: 0
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: 
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		LD_LIBRARY_PATH: /opt/bitnami/sqlite/lib:/opt/bitnami/python/lib:/opt/bitnami/mysql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/common/lib:/opt/bitnami/ruby/lib/ruby/gems/2.0.0/gems/passenger-4.0.57/lib:/opt/bitnami/memcached/lib:/opt/bitnami/varnish/lib:/opt/bitnami/varnish/lib/varnish:/opt/bitnami/varnish/lib/varnish/vmods:/opt/bitnami/redis/lib:/opt/bitnami/perl/lib:/opt/bitnami/perl/lib/5.16.3/x86_64-linux-thread-multi/CORE:/opt/bitnami/git/lib:/opt/bitnami/nginx/lib:/opt/bitnami/mongodb/lib:/opt/bitnami/sqlite/lib:/opt/bitnami/apps/django/lib/python2.7/site-packages:/opt/bitnami/mysql/lib:/opt/bitnami/postgresql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/python/lib:/opt/bitnami/subversion/lib:/opt/bitnami/ruby/lib:/opt/bitnami/common/lib:
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36
+		HTTP_CONNECTION: keep-alive
+		HTTP_COOKIE: greeting_set=True; csrftoken=vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd; sessionid=78ddfa48c61f7558685e55e2c95eddec
+		SERVER_NAME: www.teststack.bitnamiapp.com
+		REMOTE_ADDR: 69.181.197.67
+		mod_wsgi.queue_start: 1429996100579635
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /opt/bitnami/apache2/htdocs/questions/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 10.230.50.199
+		DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		mod_wsgi.process_group: wsgi-osqa
+		SCRIPT_FILENAME: /opt/bitnami/apps/osqa/scripts/osqa.wsgi
+		SERVER_ADMIN: you@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7f6fd9ef2370>
+		HTTP_DNT: 1
+		HTTP_HOST: www.teststack.bitnamiapp.com
+		CONTEXT_PREFIX: 
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /osqa/questions/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+		wsgi.version: (1, 0)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7f6fd9e47cb0>
+		REMOTE_PORT: 59686
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		REQUEST_SCHEME: http
+		mod_wsgi.version: (3, 5)
+		mod_wsgi.application_group: localhost|/osqa
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f6fd9e42828>
+		CSRF_COOKIE: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		HTTP_ACCEPT_ENCODING: gzip, deflate, sdch
+
+        COOKIES:
+        		csrftoken: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		sessionid: 78ddfa48c61f7558685e55e2c95eddec
+		greeting_set: True
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+		    context_instance=RequestContext(request))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+		    t = get_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+		    nodelist = parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1041, in load
+		    lib = get_library(taglib)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1300, in get_library
+		    lib = import_library(taglib_module)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1239, in import_library
+		    mod = import_module(taglib_module)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+		    args.append(parser.compile_filter(value))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'slugify_tag'
+		
+
+        
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:20,695 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:21,023 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:21,034 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py TIME: 2015-04-25 17:08:38,345 MSG: base.py:handle_uncaught_exception:213 Internal Server Error: /osqa/questions/
+Traceback (most recent call last):
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+    return decoratable(*args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+    res = dec(res, *args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+    context_instance=RequestContext(request))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1041, in load
+    lib = get_library(taglib)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1300, in get_library
+    lib = import_library(taglib_module)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1239, in import_library
+    mod = import_module(taglib_module)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+    class QuestionItemNode(template.Node):
+  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+    template = template.loader.get_template('question_list/item.html')
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+    args.append(parser.compile_filter(value))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+TemplateSyntaxError: Invalid filter: 'slugify_tag'
+/opt/bitnami/apps/osqa/forum/views/meta.py TIME: 2015-04-25 17:08:38,353 MSG: meta.py:error_handler:202 
+        error executing request:
+        PATH: /osqa/questions/
+        USER: testpreposqa (1)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_REFERER: http://www.teststack.bitnamiapp.com/osqa/questions/
+		mod_wsgi.listener_host: 
+		CONTEXT_DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		SERVER_SOFTWARE: Apache
+		SCRIPT_NAME: /osqa
+		mod_wsgi.enable_sendfile: 0
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: 
+		REQUEST_METHOD: GET
+		PATH_INFO: /questions/
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		LD_LIBRARY_PATH: /opt/bitnami/sqlite/lib:/opt/bitnami/python/lib:/opt/bitnami/mysql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/common/lib:/opt/bitnami/ruby/lib/ruby/gems/2.0.0/gems/passenger-4.0.57/lib:/opt/bitnami/memcached/lib:/opt/bitnami/varnish/lib:/opt/bitnami/varnish/lib/varnish:/opt/bitnami/varnish/lib/varnish/vmods:/opt/bitnami/redis/lib:/opt/bitnami/perl/lib:/opt/bitnami/perl/lib/5.16.3/x86_64-linux-thread-multi/CORE:/opt/bitnami/git/lib:/opt/bitnami/nginx/lib:/opt/bitnami/mongodb/lib:/opt/bitnami/sqlite/lib:/opt/bitnami/apps/django/lib/python2.7/site-packages:/opt/bitnami/mysql/lib:/opt/bitnami/postgresql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/python/lib:/opt/bitnami/subversion/lib:/opt/bitnami/ruby/lib:/opt/bitnami/common/lib:
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36
+		HTTP_CONNECTION: keep-alive
+		HTTP_COOKIE: greeting_set=True; csrftoken=vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd; sessionid=78ddfa48c61f7558685e55e2c95eddec
+		SERVER_NAME: www.teststack.bitnamiapp.com
+		REMOTE_ADDR: 69.181.197.67
+		mod_wsgi.queue_start: 1429996118237139
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /opt/bitnami/apache2/htdocs/questions/
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 10.230.50.199
+		DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		mod_wsgi.process_group: wsgi-osqa
+		SCRIPT_FILENAME: /opt/bitnami/apps/osqa/scripts/osqa.wsgi
+		SERVER_ADMIN: you@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7f6fd9f0ad30>
+		HTTP_DNT: 1
+		HTTP_HOST: www.teststack.bitnamiapp.com
+		CONTEXT_PREFIX: 
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /osqa/questions/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+		wsgi.version: (1, 0)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7f6fd9f546b0>
+		REMOTE_PORT: 59690
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		REQUEST_SCHEME: http
+		mod_wsgi.version: (3, 5)
+		mod_wsgi.application_group: localhost|/osqa
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f6fd9f0f8a0>
+		CSRF_COOKIE: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		HTTP_ACCEPT_ENCODING: gzip, deflate, sdch
+
+        COOKIES:
+        		csrftoken: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		sessionid: 78ddfa48c61f7558685e55e2c95eddec
+		greeting_set: True
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+		    context_instance=RequestContext(request))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+		    t = get_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+		    nodelist = parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1041, in load
+		    lib = get_library(taglib)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1300, in get_library
+		    lib = import_library(taglib_module)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1239, in import_library
+		    mod = import_module(taglib_module)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+		    args.append(parser.compile_filter(value))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'slugify_tag'
+		
+
+        
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:38,358 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:38,596 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:38,614 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py TIME: 2015-04-25 17:08:42,147 MSG: base.py:handle_uncaught_exception:213 Internal Server Error: /osqa/
+Traceback (most recent call last):
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+    return decoratable(*args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+    res = dec(res, *args, **kwargs)
+  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+    context_instance=RequestContext(request))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1041, in load
+    lib = get_library(taglib)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1300, in get_library
+    lib = import_library(taglib_module)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1239, in import_library
+    mod = import_module(taglib_module)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+    class QuestionItemNode(template.Node):
+  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+    template = template.loader.get_template('question_list/item.html')
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+    template = get_template_from_string(template, origin, template_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+    args.append(parser.compile_filter(value))
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+TemplateSyntaxError: Invalid filter: 'slugify_tag'
+/opt/bitnami/apps/osqa/forum/views/meta.py TIME: 2015-04-25 17:08:42,155 MSG: meta.py:error_handler:202 
+        error executing request:
+        PATH: /osqa/
+        USER: testpreposqa (1)
+        METHOD: GET
+        POST PARAMETERS:
+        None
+        GET PARAMETERS:
+        None
+        HTTP HEADERS:
+        		mod_wsgi.listener_port: 80
+		HTTP_COOKIE: greeting_set=True; csrftoken=vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd; sessionid=78ddfa48c61f7558685e55e2c95eddec
+		mod_wsgi.listener_host: 
+		CONTEXT_DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		SERVER_SOFTWARE: Apache
+		SCRIPT_NAME: /osqa
+		mod_wsgi.enable_sendfile: 0
+		mod_wsgi.handler_script: 
+		SERVER_SIGNATURE: 
+		REQUEST_METHOD: GET
+		PATH_INFO: /
+		SERVER_PROTOCOL: HTTP/1.1
+		QUERY_STRING: 
+		LD_LIBRARY_PATH: /opt/bitnami/sqlite/lib:/opt/bitnami/python/lib:/opt/bitnami/mysql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/common/lib:/opt/bitnami/ruby/lib/ruby/gems/2.0.0/gems/passenger-4.0.57/lib:/opt/bitnami/memcached/lib:/opt/bitnami/varnish/lib:/opt/bitnami/varnish/lib/varnish:/opt/bitnami/varnish/lib/varnish/vmods:/opt/bitnami/redis/lib:/opt/bitnami/perl/lib:/opt/bitnami/perl/lib/5.16.3/x86_64-linux-thread-multi/CORE:/opt/bitnami/git/lib:/opt/bitnami/nginx/lib:/opt/bitnami/mongodb/lib:/opt/bitnami/sqlite/lib:/opt/bitnami/apps/django/lib/python2.7/site-packages:/opt/bitnami/mysql/lib:/opt/bitnami/postgresql/lib:/opt/bitnami/apache2/lib:/opt/bitnami/python/lib:/opt/bitnami/subversion/lib:/opt/bitnami/ruby/lib:/opt/bitnami/common/lib:
+		HTTP_USER_AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36
+		HTTP_CONNECTION: keep-alive
+		SERVER_NAME: www.teststack.bitnamiapp.com
+		REMOTE_ADDR: 69.181.197.67
+		mod_wsgi.queue_start: 1429996122044844
+		mod_wsgi.request_handler: wsgi-script
+		wsgi.url_scheme: http
+		PATH_TRANSLATED: /opt/bitnami/apache2/htdocs/index.html
+		SERVER_PORT: 80
+		wsgi.multiprocess: True
+		mod_wsgi.input_chunked: 0
+		SERVER_ADDR: 10.230.50.199
+		DOCUMENT_ROOT: /opt/bitnami/apache2/htdocs
+		mod_wsgi.process_group: wsgi-osqa
+		SCRIPT_FILENAME: /opt/bitnami/apps/osqa/scripts/osqa.wsgi
+		SERVER_ADMIN: you@example.com
+		wsgi.input: <mod_wsgi.Input object at 0x7f6fd9f5c0f0>
+		HTTP_DNT: 1
+		HTTP_HOST: www.teststack.bitnamiapp.com
+		CONTEXT_PREFIX: 
+		wsgi.multithread: True
+		mod_wsgi.callable_object: application
+		REQUEST_URI: /osqa/
+		HTTP_ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+		wsgi.version: (1, 0)
+		GATEWAY_INTERFACE: CGI/1.1
+		wsgi.run_once: False
+		wsgi.errors: <mod_wsgi.Log object at 0x7f6fd9f5c130>
+		REMOTE_PORT: 59692
+		HTTP_ACCEPT_LANGUAGE: en-US,en;q=0.8
+		REQUEST_SCHEME: http
+		mod_wsgi.version: (3, 5)
+		mod_wsgi.application_group: localhost|/osqa
+		mod_wsgi.script_reloading: 1
+		wsgi.file_wrapper: <built-in method file_wrapper of mod_wsgi.Adapter object at 0x7f6fda05ac60>
+		CSRF_COOKIE: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		HTTP_ACCEPT_ENCODING: gzip, deflate, sdch
+
+        COOKIES:
+        		csrftoken: vcsZQL5klbcnii3X4vI5YQkK3NXmcSVd
+		sessionid: 78ddfa48c61f7558685e55e2c95eddec
+		greeting_set: True
+
+        EXCEPTION INFO:
+        		Traceback (most recent call last):
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/core/handlers/base.py", line 109, in get_response
+		    response = callback(request, *callback_args, **callback_kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 95, in decorated
+		    return decoratable(*args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/modules/decorators.py", line 60, in __call__
+		    res = dec(res, *args, **kwargs)
+		  File "/opt/bitnami/apps/osqa/forum/views/decorators.py", line 36, in decorated
+		    context_instance=RequestContext(request))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+		    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+		    t = get_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+		    nodelist = parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1041, in load
+		    lib = get_library(taglib)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1300, in get_library
+		    lib = import_library(taglib_module)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 1239, in import_library
+		    mod = import_module(taglib_module)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+		    __import__(name)
+		  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 10, in <module>
+		    class QuestionItemNode(template.Node):
+		  File "/opt/bitnami/apps/osqa/forum/templatetags/question_list_tags.py", line 11, in QuestionItemNode
+		    template = template.loader.get_template('question_list/item.html')
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+		    template, origin = find_template(template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+		    source, display_name = loader(name, dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+		    return self.load_template(template_name, template_dirs)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loaders/cached.py", line 49, in load_template
+		    template = get_template_from_string(template, origin, template_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+		    return Template(source, origin, name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+		    self.nodelist = compile_string(template_string, origin)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+		    return parser.parse()
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 764, in do_for
+		    nodelist_loop = parser.parse(('empty', 'endfor',))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+		    compiled_result = compile_func(self, token)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/defaulttags.py", line 1293, in url
+		    args.append(parser.compile_filter(value))
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+		    return FilterExpression(token, self)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 557, in __init__
+		    filter_func = parser.find_filter(filter_name)
+		  File "/opt/bitnami/apps/django/lib/python2.7/site-packages/django/template/base.py", line 352, in find_filter
+		    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+		TemplateSyntaxError: Invalid filter: 'slugify_tag'
+		
+
+        
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:42,158 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:42,389 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
+/opt/bitnami/apps/osqa/forum/skins/__init__.py TIME: 2015-04-25 17:08:42,400 MSG: __init__.py:find_media_source:147 could not find media for media/js/jquery.copy.js
